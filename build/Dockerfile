@@ -1,5 +1,5 @@
 FROM node:alpine
-MAINTAINER Chris Diehl <cultclassik@gmail.com>
+LABEL "maintainer"="Chris Diehl <cultclassik@gmail.com>"
 
 RUN apk update --no-cache && \
   apk add \
