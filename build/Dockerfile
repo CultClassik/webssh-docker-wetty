@@ -10,7 +10,8 @@ RUN apk update --no-cache && apk add \
     python2 \
     python2-dev \
     py-setuptools \
-    alpine-sdk
+    alpine-sdk \
+  && mkdir /app
 
 WORKDIR /app
 
