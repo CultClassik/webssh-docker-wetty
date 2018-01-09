@@ -16,11 +16,13 @@ RUN apk update --no-cache && apk add \
 WORKDIR /app
 
 RUN git clone https://github.com/krishnasrinivas/wetty.git /app \
- && npm install \
- && apk del git python2 python2-dev py-setuptools alpine-sdk \
+ && npm install
+
+RUN apk del git python2 python2-dev py-setuptools alpine-sdk
+
  # move this to startup script so users can specify the user name and pass when runing the container
- && adduser -h /home/remoter -s /bin/bash remoter remoter \
- && echo 'remoter:R3m0ter!' | chpasswd
+RUN adduser -h /home/remoter -s /bin/bash remoter remoter \
+RUN echo 'remoter:R3m0ter!' | chpasswd
 
 EXPOSE 3000
 
