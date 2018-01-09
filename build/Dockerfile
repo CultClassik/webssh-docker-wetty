@@ -10,16 +10,15 @@ RUN apk update --no-cache && apk add \
     python2 \
     python2-dev \
     py-setuptools \
-    alpine-sdk \
-  && mkdir /app
-
-ADD entrypoint.sh /app/
-WORKDIR /app
+    alpine-sdk
 
 RUN chmod +x /app/entrypoint.sh \
  && git clone https://github.com/krishnasrinivas/wetty.git /app \
+ && cd /app
  && npm install \
  && apk del git python2 python2-dev py-setuptools alpine-sdk
+
+ADD entrypoint.sh /app/
 
 EXPOSE 3000
 
