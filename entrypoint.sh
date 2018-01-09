@@ -2,17 +2,15 @@
 
 while getopts h:p:u:x: option
 do
-  case "${option}"
+ case "${option}"
     in
     h) MYHOST=${OPTARG};;
     p) MYPORT=${OPTARG};;
     u) MYUSER=${OPTARG};;
     x) MYPASS=${OPTARG};;
-  esac
+ esac
 done
 
 adduser -h /home/${MYUSER} -s /bin/bash ${MYUSER} ${MYUSER}
 echo "${MYUSER}:${MYPASS}" | chpasswd
-
-#CMD [ "npm", "app.js", "-p", "3000", "--sshhost", "${MY_HOST}", "--sshport", "${MY_PORT}" ]
-npm app.js -p 3000 --sshhost ${MYHOST}", "--sshport", "${MYPORT}"
+node app.js -p 3000 --sshhost ${MYHOST} --sshport ${MYPORT} --sshuser ${MYUSER}
