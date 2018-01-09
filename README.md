@@ -16,6 +16,14 @@ docker build -t cultclassik/webssh-wetty ./build
 
 ## Usage
 
+docker run -d cultclassik/webssh-wetty --sshhost myhost.mydomain.net --sshport 8022
+
+Please put this container behind a reverse proxy that's using an SSL cert for the safety of your network :)
+
+## TODO
+
+Add a startup script so that docker run can pass the userid and password in, then set them in the container when run.
+
 ## Contributing
 
 1. Fork it!
