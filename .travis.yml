@@ -8,11 +8,9 @@ services:
   - docker
 
 script:
-  - TAG="10.2-amd"
-  - CONT_NAME="claymore-eth"
+  - TAG="latest"
+  - CONT_NAME="webssh-docker"
   - docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
-  - docker build -t cultclassik/$CONT_NAME:latest-amd ./build
+  - docker build -t cultclassik/$CONT_NAME:TAG ./build
   - docker images
-  - docker tag cultclassik/$CONT_NAME:latest-amd cultclassik/$CONT_NAME:$TAG
   - docker push cultclassik/$CONT_NAME:$TAG
-  - docker push cultclassik/$CONT_NAME:latest-amd
