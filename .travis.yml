@@ -9,7 +9,7 @@ services:
 
 script:
   - TAG="latest"
-  - CONT_NAME="webssh-docker"
+  - CONT_NAME="webssh-wetty"
   - docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
   - docker build -t cultclassik/$CONT_NAME:$TAG ./build
   - docker images
