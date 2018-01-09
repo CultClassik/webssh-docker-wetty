@@ -11,6 +11,6 @@ script:
   - TAG="latest"
   - CONT_NAME="webssh-docker"
   - docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
-  - docker build -t cultclassik/$CONT_NAME:TAG ./build
+  - docker build -t cultclassik/$CONT_NAME:$TAG ./build
   - docker images
   - docker push cultclassik/$CONT_NAME:$TAG
