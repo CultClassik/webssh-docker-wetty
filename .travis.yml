@@ -1,0 +1,18 @@
+sudo: required
+
+language: bash
+
+dist: xenial
+
+services:
+  - docker
+
+script:
+  - TAG="10.2-amd"
+  - CONT_NAME="claymore-eth"
+  - docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
+  - docker build -t cultclassik/$CONT_NAME:latest-amd ./build
+  - docker images
+  - docker tag cultclassik/$CONT_NAME:latest-amd cultclassik/$CONT_NAME:$TAG
+  - docker push cultclassik/$CONT_NAME:$TAG
+  - docker push cultclassik/$CONT_NAME:latest-amd
