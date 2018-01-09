@@ -14,7 +14,7 @@ RUN apk update --no-cache && apk add \
 
 RUN chmod +x /app/entrypoint.sh \
  && git clone https://github.com/krishnasrinivas/wetty.git /app \
- && cd /app
+ && cd /app \
  && npm install \
  && apk del git python2 python2-dev py-setuptools alpine-sdk
 
