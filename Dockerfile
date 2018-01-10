@@ -20,4 +20,4 @@ WORKDIR /app
 
 EXPOSE 3000
 
-ENTRYPOINT [ "/app/entrypoint.sh", "-h", "myhost", "-p", "myport", "-u", "myuser", "-x", "mypass" ]
+CMD [ "/app/entrypoint.sh", "-h", "myhost", "-p", "myport", "-u", "myuser", "-x", "mypass" ]

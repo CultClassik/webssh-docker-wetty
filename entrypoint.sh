@@ -12,5 +12,5 @@ do
 done
 
 adduser -h /home/${MYUSER} -s /bin/bash ${MYUSER} ${MYUSER}
-echo "${MYUSER}:${MYPASS}" | chpasswd
+echo "$MYUSER:$MYPASS" | chpasswd
 node app.js -p 3000 --sshhost ${MYHOST} --sshport ${MYPORT} --sshuser ${MYUSER}
